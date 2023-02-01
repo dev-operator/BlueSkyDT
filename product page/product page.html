@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="product page.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="product-info">
+      <h1>Корпус Cougar MX331 Mesh-X Black</h1>
+      <img src="cougar 1.png" alt="cougar 1.png">
+      <p class="price">₽3 418</p>
+      <p class="description">Код производителя
+
+        MX331 Mesh-X
+
+Форм-фактор материнской платы
+
+        ATX
+        Mini-ITX
+        microATX
+
+Количество отсеков 5.25"
+
+        1
+
+Мощность блока питания
+
+        Без блока питания
+
+Количество внутренних отсеков 3.5"
+
+        2
+
+Количество отсеков 2.5"
+
+        2 + 2 (преобразовывается из 3.5-дюймовых отсеков)
+
+Охлаждение
+
+        Предустановленное:
+        Задняя панель: 1 х 120 мм
+
+        Опционально:
+        Лицевая панель: 2 x 120 мм
+        Верхняя панель: 2 x 120 мм
+        Боковая панель: 1 x 80 / 120 / 200 мм
+        Боковая панель: 1 х 120 мм (предварительно установлен)
+
+        СВО:
+        Лицевая панель: 240 мм / 120 мм
+        Верхняя панель: 120 мм
+        Задняя панель: 120 мм
+
+Количество установленных вентиляторов
+
+        1
+
+Размеры
+
+        204 x 481 x 443 мм
+
+Вес
+
+        4.6 кг.</p>
+      <form action="#" method="post"> <!-- форма с добавление количество товара в корзину -->
+        <input type="number" name="quantity" value="1" min="1">
+        <input type="submit" value="Add to Cart">
+      </form> <!-- форма с добавление количество товара в корзину -->
+    </section>
+  </main>
+  <footer> <!-- крч, от footer'a до footer'a: это лого в подвале сайта -->
+    <div class="footer-content">
+        <img src="logo 1.png" alt="Footer Logo">
+        <p>&copy; 2023 Online Store</p>
+    </div>
+  </footer> <!-- крч, от footer'a до footer'a: это лого в подвале сайта -->
+</body>
+</html>
+
+
+
+
+<script>
+const prevButton = document.querySelector(".prev-button");
+const nextButton = document.querySelector(".next-button");
+const productImages = document.querySelectorAll(".product-images img");
+
+let currentImageIndex = 0;
+
+productImages[currentImageIndex].classList.add("active");
+
+prevButton.addEventListener("click", function () {
+  productImages[currentImageIndex].classList.remove("active");
+  currentImageIndex--;
+  if (currentImageIndex < 0) {
+    currentImageIndex = productImages.length - 1;
+  }
+  productImages[currentImageIndex].classList.add("active");
+});
+
+nextButton.addEventListener("click", function () {
+  productImages[currentImageIndex].classList.remove("active");
+  currentImageIndex++;
+  if (currentImageIndex >= productImages.length) {
+    currentImageIndex = 0;
+  }
+  productImages[currentImageIndex].classList.add("active");
+});
+
+</script>  <!-- слайдер картинок на java-script -->
